@@ -13,6 +13,10 @@ const ActivitySchema = mongoose.Schema({
     type: Date,
     required: true,
   },
+  price: {
+    type: Number,
+    required: true,
+  },
 });
 
 ActivitySchema.set('toJSON', {

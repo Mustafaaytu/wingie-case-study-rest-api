@@ -13,7 +13,7 @@ const get = async (req, res) => {
 const findById = async (req, res) => {
   try {
     const {id} = req.params;
-    const reservation = await Reservation.findById(id);
+    const reservation = await Reservation.findById(id).populate('activity');
     res.status(200).json(reservation);
   } catch (error) {
     res.status(500).json({message: error.message});
